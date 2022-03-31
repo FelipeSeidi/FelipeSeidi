@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Float Menu</title>
+        <meta charset="utf-8">
+        <link href="./floatMenu.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul>
+
+                <li>
+                    <a href="#" class="ativo">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Sobre
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Perfil
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        Configurações
+                    </a>
+                </li>
+
+            </ul>
+        </header>
+        <section>
+            <img src="/stars.png" id="estrelas">
+            <img src="/moon.png" id="lua">
+            <img src="/mountains_behind.png" id="montanha_atras">
+            <h2 id="text">Lorem Ypsum</h2>
+            <a href="#sec" id="btn">Explorar</a>
+            <img src="/mountains_front.png" id="montanha_frente">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Efeito Parallax</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra eget turpis in faucibus. Morbi scelerisque, massa ut consectetur ultrices, nisl risus rutrum quam, eget varius libero justo eu quam. Maecenas luctus eget nibh a volutpat. Nulla nibh elit, porttitor luctus nisi sed, mollis bibendum ex. Nulla luctus leo velit, sit amet sollicitudin justo pulvinar eu. Quisque quis nulla mattis, dignissim risus at, sagittis nibh. Nullam hendrerit sapien eu risus pellentesque, consequat placerat quam dictum. Praesent et neque faucibus, hendrerit nunc id, luctus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra eget turpis in faucibus. Morbi scelerisque, massa ut consectetur ultrices, nisl risus rutrum quam, eget varius libero justo eu quam. Maecenas luctus eget nibh a volutpat. Nulla nibh elit, porttitor luctus nisi sed, mollis bibendum ex. Nulla luctus leo velit, sit amet sollicitudin justo pulvinar eu. Quisque quis nulla mattis, dignissim risus at, sagittis nibh. Nullam hendrerit sapien eu risus pellentesque, consequat placerat quam dictum. Praesent et neque faucibus, hendrerit nunc id, luctus leo.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra eget turpis in faucibus. Morbi scelerisque, massa ut consectetur ultrices, nisl risus rutrum quam, eget varius libero justo eu quam. Maecenas luctus eget nibh a volutpat. Nulla nibh elit, porttitor luctus nisi sed, mollis bibendum ex. Nulla luctus leo velit, sit amet sollicitudin justo pulvinar eu. Quisque quis nulla mattis, dignissim risus at, sagittis nibh. Nullam hendrerit sapien eu risus pellentesque, consequat placerat quam dictum. Praesent et neque faucibus, hendrerit nunc id, luctus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra eget turpis in faucibus. Morbi scelerisque, massa ut consectetur ultrices, nisl risus rutrum quam, eget varius libero justo eu quam. Maecenas luctus eget nibh a volutpat. Nulla nibh elit, porttitor luctus nisi sed, mollis bibendum ex. Nulla luctus leo velit, sit amet sollicitudin justo pulvinar eu. Quisque quis nulla mattis, dignissim risus at, sagittis nibh. Nullam hendrerit sapien eu risus pellentesque, consequat placerat quam dictum. Praesent et neque faucibus, hendrerit nunc id, luctus leo.</p>
+        </div>
+        
+        <script>
+            let estrelas = document.getElementById('estrelas');
+            let lua = document.getElementById('lua');
+            let montAtras = document.getElementById('montanha_atras');
+            let texto = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let montFrente = document.getElementById('montanha_frente');
+            let header = document.querySelector('header');
+
+            
+            window.addEventListener('scroll',function(){
+                let value = window.scrollY;
+                estrelas.style.left = value * 0.25 + 'px';
+                lua.style.top = value * 1.05 + 'px';
+                montAtras.style.top = value * 0.5 + 'px';
+                montFrente.style.left = value * 0 + 'px';
+                texto.style.marginRight = value * 4 + 'px';
+                texto.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+
+        </script>
+    </body>
+</html>
