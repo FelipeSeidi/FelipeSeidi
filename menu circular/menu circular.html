@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Menu circular</title>
+        <link href="/menu circular.css" rel="stylesheet">
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+
+        <ul class="menu">
+            <div class="toggle">
+                <ion-icon name="add-outline"></ion-icon>
+            </div><!--toggle-->
+            <li style="--i:0;" class="ativo"><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
+            <li style="--i:1;"><a href="#"><ion-icon name="person-outline"></ion-icon></a></li>
+            <li style="--i:2;"><a href="#"><ion-icon name="settings-outline"></ion-icon></a></li>
+            <li style="--i:3;"><a href="#"><ion-icon name="mail-outline"></ion-icon></a></li>
+            <li style="--i:4;"><a href="#"><ion-icon name="videocam-outline"></ion-icon></a></li>
+            <li style="--i:5;"><a href="#"><ion-icon name="key-outline"></ion-icon></a></li>
+            <li style="--i:6;"><a href="#"><ion-icon name="game-controller-outline"></ion-icon></a></li>
+            <li style="--i:7;"><a href="#"><ion-icon name="camera-outline"></ion-icon></a></li>
+        
+            <div class="indicador">
+            
+            </div><!--indicador-->
+        </ul><!--menu-->
+
+
+        <script>
+
+            let menuToggle = document.querySelector('.toggle');
+            let menu = document.querySelector('.menu');
+
+            menuToggle.onclick = function(){
+                menu.classList.toggle('ativo');
+                menuToggle.classList.toggle('ativo');
+            }
+
+            const lista = document.querySelectorAll('li');
+            function linkAtivo(){
+                lista.forEach((item)=>
+                item.classList.remove('ativo'));
+                this.classList.add('ativo');
+            }
+
+            lista.forEach((item)=>
+            item.addEventListener('click',linkAtivo));
+
+
+        </script>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
