@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #3d4152;
+}
+
+.nav{
+    position: fixed;
+    width: 75px;
+    inset: 20px;
+    background: #fff;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav.aberto{
+    width: 250px;
+
+}
+
+.nav .menuToggle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.nav .menuToggle::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(-8px);
+    transition: 0.5s;
+}
+
+.nav.aberto .menuToggle::before{
+    transform: translateY(0px)
+    rotate(45deg);
+}
+
+.nav .menuToggle::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #333;
+    transform: translateY(8px);
+    transition: 0.5s;
+    box-shadow: 0 -8px 0 #333;
+}
+
+.nav.aberto .menuToggle::after{
+    transform: translateY(0px)
+    rotate(-45deg);
+    box-shadow: 0 0 0 #333;
+}
+
+.nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.nav ul li{
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    transition: 0.5s;
+}
+
+.nav ul li.aberto{
+    transform: translateX(5px);
+}
+
+.nav.aberto ul li.aberto{
+    transform: translateX(30px);
+}
+
+.nav ul li a{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nav ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 55px;
+    height: 55px;
+    line-height: 65px;
+    transition: 0.5s;
+    border-radius: 10px;
+    font-size: 1.5em;
+    color: #222;
+}
+
+.nav ul li.aberto a .icon{
+    background: var(--clr);
+    color: #fff;
+}
+
+.nav ul li a .icon::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.nav ul li.aberto a .icon::before{
+    opacity: 1;
+}
+
+.nav ul li a .texto{
+    position: relative;
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.nav.aberto ul li a .texto{
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav ul li.aberto a .texto{
+    color: var(--clr);
+}
